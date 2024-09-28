@@ -1,0 +1,23 @@
+import openai
+
+# Initialize OpenAI API client
+openai.api_key = "your_api_key_here"
+
+# Create the assistant
+def create_financial_assistant():
+    assistant_response = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": "You are an expert financial analyst. Use your knowledge base to answer questions about audited financial statements."},
+        ],
+        temperature=0.7,
+        max_tokens=150,
+        n=1,
+        stop=None
+    )
+    return assistant_response['choices'][0]['message']['content']
+
+# Example usage
+if __name__ == "__main__":
+    response = create_financial_assistant()
+    print("Assistant Response:", response)
