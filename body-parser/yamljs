@@ -1,0 +1,4 @@
+mkdir secure-server
+cd secure-server
+npm init -y
+npm install express body-parser yamljs
