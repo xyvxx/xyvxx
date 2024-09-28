@@ -1,0 +1,40 @@
+import openai
+
+# Initialize OpenAI API client
+openai.api_key = "your_api_key_here"
+
+def create_financial_assistant_response(prompt, temperature=0.7, max_tokens=150):
+    """
+    Create a response from the financial analyst assistant.
+
+    :param prompt: The user's question or prompt for the assistant.
+    :param temperature: Controls the randomness of the output. Higher values make output more random.
+    :param max_tokens: The maximum number of tokens in the output.
+    :return: The response from the assistant.
+    """
+    try:
+        # Make a request to the OpenAI API
+        response = openai.ChatCompletion.create(
+            model="gpt-4",  # Use the model you have access to
+            messages=[
+                {"role": "system", "content": "You are an expert financial analyst. Use your knowledge base to answer questions about audited financial statements."},
+                {"role": "user", "content": prompt}
+            ],
+            temperature=temperature,
+            max_tokens=max_tokens,
+            n=1,
+            stop=None
+        )
+        # Extract and return the assistant's response
+        return response['choices'][0]['message']['content']
+    
+    except Exception as e:
+        return f"An error occurred: {e}"
+
+# Example usage
+if __name__ == "__main__":
+    # Ask a question
+    user_question = "What are the key components of an audited financial statement?"
+    assistant_response = create_financial_assistant_response(user_question)
+
+    print("Assistant Response:", assistant_response)
