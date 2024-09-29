@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .resume {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 5px 0;
+            font-weight: bold;
+            color: #3498db;
+        }
+        .contact-info p {
+            margin: 0;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h2 {
+            background-color: #3498db;
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .skills ul, .experience ul, .certifications ul, .languages ul {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+        .job, .degree, .project, .volunteer {
+            margin-bottom: 15px;
+        }
+        .company {
+            font-style: italic;
+            color: #555;
+        }
+        #download-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        #download-btn:hover {
+            background-color: #2980b9;
+        }
+        .social-media {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .icon {
+            width: 25px;
+            height: 25px;
+            margin: 0 5px;
+            transition: transform 0.3s;
+        }
+        .icon:hover {
+            transform: scale(1.1);
+        }
+        @media (max-width: 768px) {
+            .resume {
+                padding: 15px;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            .contact-info p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            header p {
+                font-size: 0.9rem;
+            }
+            .skills ul, .experience ul, .certifications ul, .languages ul {
+                font-size: 0.9rem;
+            }
+            .contact-info p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <header>
+            <h1>John Doe</h1>
+            <p>Web Developer | Remote Project Manager</p>
+            <div class="contact-info">
+                <p>Email: johndoe@example.com | Phone: (123) 456-7890 | Location: Remote</p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/johndoe">linkedin.com/in/johndoe</a></p>
+                <p>GitHub: <a href="https://github.com/johndoe">github.com/johndoe</a></p>
+            </div>
+        </header>
+        <section class="summary">
+            <h2>Professional Summary</h2>
+            <p>
+                Experienced Web Developer and Remote Project Manager with 5+ years of expertise in front-end and back-end technologies, 
+                project management, and remote collaboration. Proficient in HTML, CSS, JavaScript, and frameworks like React and Node.js. 
+                Proven ability to lead diverse teams and deliver high-quality projects in a timely manner.
+            </p>
+        </section>
+        <section class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML5, CSS3, JavaScript, jQuery</li>
+                <li>React, Angular, Vue.js</li>
+                <li>Node.js, Express.js, MongoDB</li>
+                <li>Project Management (Agile, Scrum, Trello, Jira)</li>
+                <li>Version Control (Git, GitHub)</li>
+                <li>Remote Communication (Slack, Zoom, Microsoft Teams)</li>
+            </ul>
+        </section>
+        <section class="experience">
+            <h2>Work Experience</h2>
+            <div class="job">
+                <h3>Senior Web Developer / Project Manager</h3>
+                <p class="company">Tech Solutions Inc. | Remote | Jan 2020 - Present</p>
+                <ul>
+                    <li>Managed a team of 10+ developers to deliver web applications using Agile methodologies.</li>
+                    <li>Designed and developed front-end and back-end components using React, Node.js, and MongoDB.</li>
+                    <li>Ensured projects were completed within deadlines and budgets, achieving a 95% client satisfaction rate.</li>
+                </ul>
+            </div>
+        </section>
+        <section class="education">
+            <h2>Education</h2>
+            <div class="degree">
+                <h3>Bachelor of Science in Computer Science</h3>
+                <p class="institution">University of Tech | 2013 - 2017</p>
+            </div>
+        </section>
+        <button id="download-btn">Download as PDF</button>
+        <footer>
+            <div class="social-media">
+                <a href="https://linkedin.com/in/johndoe" target="_blank">
+                    <img src="linkedin-icon.png" alt="LinkedIn" class="icon">
+                </a>
+                <a href="https://github.com/johndoe" target="_blank">
+                    <img src="github-icon.png" alt="GitHub" class="icon">
+                </a>
+            </div>
+            <p style="text-align: center;">References available upon request.</p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        document.getElementById('download-btn').addEventListener('click', () => {
+            const element = document.querySelector('.resume');
+            html2pdf().from(element).save('resume.pdf');
+        });
+    </script>
+</body>
+                  </html>
+  
